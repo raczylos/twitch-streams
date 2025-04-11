@@ -1,8 +1,6 @@
 
 ### Install Dependencies
 Ensure that the following are installed on your system:
-* Java 21
-* Node
 * Docker
 * Docker Compose
 * Docker Desktop
