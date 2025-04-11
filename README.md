@@ -2,7 +2,6 @@
 ### Install Dependencies
 Ensure that the following are installed on your system:
 * Java 21
-* Angular
 * Node
 * Docker
 * Docker Compose
