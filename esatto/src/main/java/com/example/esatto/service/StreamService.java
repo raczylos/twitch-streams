@@ -45,7 +45,7 @@ public class StreamService {
     public void addStreamsFromTwitch(){
         String cursor = null;
         int i = 0;
-        final int MAX_REQUESTS = 5;
+        final int MAX_REQUESTS = 3;
         do {
             TwitchApiResponse<StreamResponse> twitchStreams = twitchApiClient.fetchLiveStreams(cursor);
             cursor = twitchStreams.getPagination().getCursor();
