@@ -1,0 +1,35 @@
+.streams-container {
+    padding: 16px;
+}
+
+.streams-container > div {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    justify-content: center;
+}
+
+.stream-card {
+    max-width: 300px;
+    box-sizing: border-box;
+}
+
+.mat-card-header {
+    overflow: hidden;
+    display: block;
+}
+
+.mat-card-title {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.mat-card-image {
+    object-fit: cover;
+    height: 180px;
+}
+.spinner {
+    width: 50%;
+    margin: 0 auto;
+}

@@ -1,0 +1,60 @@
+<div class="streams-container">
+    <div *ngIf="isLoading && !isFetched">
+        <button
+            mat-raised-button
+            color="primary"
+            (click)="addStreamsFromTwitch()"
+            class="add-streams-button"
+        >
+            Add Streams from Twitch
+        </button>
+    </div>
+    <mat-spinner *ngIf="isLoading && isFetched" class="spinner"></mat-spinner>
+    <div *ngIf="!isLoading">
+        <mat-form-field appearance="outline" class="game-filter">
+            <mat-label>Filter by game name</mat-label>
+            <input matInput [formControl]="gameFilterControl" />
+        </mat-form-field>
+    </div>
+
+    <div *ngIf="!isLoading">
+        <mat-card
+            *ngFor="let stream of streams"
+            class="stream-card"
+            appearance="outlined"
+        >
+            <mat-card-header>
+                <mat-card-title>{{ stream.title }}</mat-card-title>
+                <mat-card-subtitle>
+                    {{ stream.streamer.displayName }}
+                </mat-card-subtitle>
+                <mat-card-subtitle>
+                    {{ stream.game.name }}
+                </mat-card-subtitle>
+            </mat-card-header>
+
+            <img
+                mat-card-image
+                [src]="stream.thumbnailUrl | thumbnail"
+                alt="Stream thumbnail"
+            />
+
+            <mat-card-content>
+                <p>{{ stream.viewerCount | number }} viewers</p>
+                <p>Duration: {{ getStreamDuration(stream.startedAt) }}</p>
+            </mat-card-content>
+
+            <mat-card-actions> </mat-card-actions>
+        </mat-card>
+
+        <mat-paginator
+            [length]="totalElements"
+            [pageSize]="pageSize"
+            [pageSizeOptions]="pageSizeOptions"
+            [pageIndex]="pageIndex"
+            (page)="onPageChange($event)"
+            aria-label="Select page"
+        >
+        </mat-paginator>
+    </div>
+</div>
