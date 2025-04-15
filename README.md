@@ -14,7 +14,7 @@ Ensure that the following are installed on your system:
 * backend - http://localhost:8080/swagger-ui/index.html
 
 ### How to use:
-* fetch data from twitch by clicking button on frotend and wait several minutes for results
+* fetch data from twitch by clicking button on frontend and wait several minutes for results
 * (alternative way) fetch data using swagger to fill database
 
 ### Additional information:
